@@ -19,7 +19,6 @@
     <ul>
         <li>-a: Add to Staging Area</li>
         <li>-m: Add Inline Commit Message</li>
-        <li></li>
     </ul>
     <h2>Tracked Files</h2>
     <p>Any File That Has:</p>
@@ -42,5 +41,19 @@
     <p>If you rename a file using the bash command "mv", git will think a file has been deleted and a new one added</p>
     <p>Use git mv to rename files.  It will automatically add it to staging</p>
     <p>Git has to be tracking a file for it to be deleted using git rm</p>
+    <h2>Alias</h2>
+    <ul>
+        <li><strong>To Add a new Alias - </strong> git config --global alias.[name] "[command]"</li>
+        <li><strong>To Modify an Alias - </strong>[editor] ~/.gitconfig</li>
+    </ul>
+    <h2>Ignore</h2>
+    <p><strong>Create an ignore file - </strong>[editor] .gitignore</p>
+    <h2>Comparisons</h2>
+    <ul>
+        <li>git diff</li>
+        <li>git difftool</li>
+        <li>git difftool HEAD compares the current working directory with the last commit</li>
+        <li>git difftool --staged HEAD compares the staging area to the last commit</li>
+    </ul>
 </body>
 </html>
