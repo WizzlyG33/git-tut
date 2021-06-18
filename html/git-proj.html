@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>This is My Git Page</h1>
+    <h2></h2>
     <p><a href="working-directory.html">Working Directory</a> -> <a>Staging Area</a> -> <a>Local Repo</a> -> <a>Remote Repo</a></p>
     <h2>Starting a Project</h2>
     <ol>
@@ -37,5 +38,9 @@
         <li><strong>To Remove from Staging - </strong>git reset HEAD [file] </li>
         <li><strong>To Remove Completely - </strong>git checkout -- [file]</li>
     </ul>
+
+    <p>If you rename a file using the bash command "mv", git will think a file has been deleted and a new one added</p>
+    <p>Use git mv to rename files.  It will automatically add it to staging</p>
+    <p>Git has to be tracking a file for it to be deleted using git rm</p>
 </body>
 </html>
