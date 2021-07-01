@@ -32,6 +32,11 @@
     <h2>Recursive Add</h2>
     <p>git add .</p>
 
+    <h2>Ammend Commit</h2>
+    <ul>
+        <li>git commit --amend</li>
+    </ul>
+
     <h2>Back Out Changes</h2>
     <ul>
         <li><strong>To Remove from Staging - </strong>git reset HEAD [file] </li>
@@ -97,13 +102,17 @@
     </ul>
     <h2>Tagging</h2>
     <ul>
-        <li><strong> - </strong></li>
-        <li><strong> - </strong></li>
-        <li><strong> - </strong></li>
-        <li><strong> - </strong></li>
-        <li><strong> - </strong></li>
-        <li><strong> - </strong></li>
-        <li><strong> - </strong></li>
+        <li><strong>Apply a Lightweight Tag to current commit - </strong>git tag [tag name]</li>
+        <li><strong>View tags - </strong>git tag --list</li>
+        <li><strong>Delete tag - </strong>git tag --delete [tag name]</li>
+        <li><strong>Create an Annotated Tag - </strong>git tag -a [tag name]</li>
+        <li><strong>Show tags - </strong>git show [tag name]</li>
+        <li><strong>Inline tag - </strong>git tag [tag name] -m [message]</li>
+        <li><strong>Tag a specific commit - </strong>git tag -a [tag name] [commit]</li>
+        <li><strong>Update a Tag - </strong>git tag -a [tag name] -f [commit]</li>
+        <li><strong>Push Tags to GitHub - </strong>git push origin [tag name]</li>
+        <li><strong>Push all Tags to GitHub - </strong>git push origin main --tags</li>
+        <li><strong>Remove Tag from GitHub - </strong>git push origin :[tag name]</li>
     </ul>
 </body>
 </html>
