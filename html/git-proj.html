@@ -9,110 +9,151 @@
     <h1>This is My Git Page</h1>
     <h2></h2>
     <p><a href="working-directory.html">Working Directory</a> -> <a>Staging Area</a> -> <a>Local Repo</a> -> <a>Remote Repo</a></p>
-    <h2>Starting a Project</h2>
-    <ol>
-        <li><strong>Fresh (no source yet) - </strong>git init [project name]</li>
-        <li><strong> Existing source locally - </strong>git init (while in project folder)</li>
-        <li><strong> GitHub project (Fork and clone) - </strong>git clone [GitHub clone URL]</li>
-    </ol>
-    <h2>Commit Stortcuts</h2>
-    <ul>
-        <li>-a: Add to Staging Area</li>
-        <li>-m: Add Inline Commit Message</li>
-    </ul>
-    <h2>Tracked Files</h2>
-    <p>Any File That Has:</p>
-    <ul>
-        <li>Been Committed</li>
-        <li>Been Added to the Git Index</li>
-        <li>Been Added to the Staging Area</li>
-    </ul>
-    <p><strong>To See Tracked Files -</strong> git ls-files</p>
 
-    <h2>Recursive Add</h2>
-    <p>git add .</p>
+    <section>
+        <h2>Starting a Project</h2>
+        <ol>
+            <li><strong>Fresh (no source yet) - </strong>git init [project name]</li>
+            <li><strong> Existing source locally - </strong>git init (while in project folder)</li>
+            <li><strong> GitHub project (Fork and clone) - </strong>git clone [GitHub clone URL]</li>
+        </ol>
+    </section>
+   
+    <section>
+        <h2>Commit Stortcuts</h2>
+        <ul>
+            <li>-a: Add to Staging Area</li>
+            <li>-m: Add Inline Commit Message</li>
+        </ul>
+    </section>
 
-    <h2>Ammend Commit</h2>
-    <ul>
-        <li>git commit --amend</li>
-    </ul>
+    <section>
+        <h2>Tracked Files</h2>
+        <p>Any File That Has:</p>
+        <ul>
+            <li>Been Committed</li>
+            <li>Been Added to the Git Index</li>
+            <li>Been Added to the Staging Area</li>
+        </ul>
+        <p><strong>To See Tracked Files -</strong> git ls-files</p>
+    </section>
 
-    <h2>Back Out Changes</h2>
-    <ul>
-        <li><strong>To Remove from Staging - </strong>git reset HEAD [file] </li>
-        <li><strong>To Remove Completely - </strong>git checkout -- [file]</li>
-    </ul>
+    <section>
+        <h2>Recursive Add</h2>
+        <p>git add .</p>
+    </section>
 
-    <p>If you rename a file using the bash command "mv", git will think a file has been deleted and a new one added</p>
-    <p>Use git mv to rename files.  It will automatically add it to staging</p>
-    <p>Git has to be tracking a file for it to be deleted using git rm</p>
-    <h2>Alias</h2>
-    <ul>
-        <li><strong>To Add a new Alias - </strong> git config --global alias.[name] "[command]"</li>
-        <li><strong>To Modify an Alias - </strong>[editor] ~/.gitconfig</li>
-    </ul>
-    <h2>Ignore</h2>
-    <p><strong>Create an ignore file - </strong>[editor] .gitignore</p>
-    <h2>Comparisons</h2>
-    <ul>
-        <li>git diff</li>
-        <li>git difftool</li>
-        <li>git difftool HEAD compares the current working directory with the last commit</li>
-        <li>git difftool --staged HEAD compares the staging area to the last commit</li>
-        <li>git difftool -- [filepath] compares changes for just one file</li>
-        <li>git difftool [commit 1] [commit 2] compares differences betwen commits</li>
-        <li>git difftool main origin/main compares local to remote repos</li>
-        <li>git difftool [branch 1] [branch 2] compares differences between two branches</li>
-    </ul>
-    <h2>Branches</h2>
-    <ul>
-        <li><strong>To List All Branches - </strong>git branch -a</li>
-        <li><strong>To Create A New Branch - </strong>git branch [branch]</li>
-        <li><strong>To Switch Branches - </strong></li>
-        <li><strong>To Rename A Branch - </strong>git branch -m [branch] [new branch]</li>
-        <li><strong>To Delete A Branch (Must Be In A Different Branch) - </strong>git branch -d [branch]</li>
-        <li><strong>To Create and Switch To Branch - </strong>git checkout -b [branch]</li>
-    </ul>
-    <h2>Merging</h2>
-    <ul>
-        <li><strong>Fast Forward Merge - </strong>(Switch To Destination Branch) git merge [source]</li>
-        <li><strong>Disable Fast Forward - </strong>(Switch To Destination Branch) git merge [source] --no-ff</li>
-        <li><strong>Automatic Merges - </strong>Happen when changes are made to master AND new branch</li>
-        <li><strong>Dealing with Merge Conflicts - </strong>git mergetool (then do a normal commit)</li>
-    </ul>
-    <h2>Rebasing</h2>
-    <ul>
-        <li><strong>Basic Rebase - </strong>(From Destination) git rebase [source]</li>
-        <li><strong>Rewinds the Feature added, applies the main branch changes made, and then adds the feature afterwards</strong></li>
-        <li><strong>Abort a Rebase due to Conflict - </strong>git rebase --abort</li>
-        <li><strong>Resolve Conflict of Rebase - </strong>git mergetool; commit the changes; git rebase --continue</li>
-    </ul>
-    <h2>Stashing</h2>
-    <ul>
-        <li><strong>Save and stash changes to work on something else - </strong>git stash</li>
-        <li><strong>Retrieve stashed changes - </strong>git stash apply</li>
-        <li><strong>List the existing stashes - </strong>git stash list</li>
-        <li><strong>Drop unwanted stashes - </strong>git stash drop</li>
-        <li><strong>Stash command only stashes tracked files</strong></li>
-        <li><strong>To stash untracked files - </strong>git stash -u</li>
-        <li><strong>To apply and then drop stash - </strong>git stash pop</li>
-        <li><strong>Working multiple stashes - </strong>git stash save "[message]"; git stash apply stash@{[index]}</li>
-        <li><strong>Stashing into a branch - </strong>git stash -u; git stash branch [branch]</li>
-        <li><strong>Clear stashes - </strong>git stash clear</li>
-    </ul>
-    <h2>Tagging</h2>
-    <ul>
-        <li><strong>Apply a Lightweight Tag to current commit - </strong>git tag [tag name]</li>
-        <li><strong>View tags - </strong>git tag --list</li>
-        <li><strong>Delete tag - </strong>git tag --delete [tag name]</li>
-        <li><strong>Create an Annotated Tag - </strong>git tag -a [tag name]</li>
-        <li><strong>Show tags - </strong>git show [tag name]</li>
-        <li><strong>Inline tag - </strong>git tag [tag name] -m [message]</li>
-        <li><strong>Tag a specific commit - </strong>git tag -a [tag name] [commit]</li>
-        <li><strong>Update a Tag - </strong>git tag -a [tag name] -f [commit]</li>
-        <li><strong>Push Tags to GitHub - </strong>git push origin [tag name]</li>
-        <li><strong>Push all Tags to GitHub - </strong>git push origin main --tags</li>
-        <li><strong>Remove Tag from GitHub - </strong>git push origin :[tag name]</li>
-    </ul>
+    <section>
+        <h2>Ammend Commit</h2>
+        <ul>
+            <li>git commit --amend</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Back Out Changes</h2>
+        <ul>
+            <li><strong>To Remove from Staging - </strong>git reset HEAD [file] </li>
+            <li><strong>To Remove Completely - </strong>git checkout -- [file]</li>
+        </ul>
+    </section>
+
+    <section>
+        <p>If you rename a file using the bash command "mv", git will think a file has been deleted and a new one added</p>
+        <p>Use git mv to rename files.  It will automatically add it to staging</p>
+        <p>Git has to be tracking a file for it to be deleted using git rm</p>
+    </section>
+
+    <section>
+        <h2>Alias</h2>
+        <ul>
+            <li><strong>To Add a new Alias - </strong> git config --global alias.[name] "[command]"</li>
+            <li><strong>To Modify an Alias - </strong>[editor] ~/.gitconfig</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Ignore</h2>
+        <p><strong>Create an ignore file - </strong>[editor] .gitignore</p>
+    </section>
+    
+    <section>
+        <h2>Comparisons</h2>
+        <ul>
+            <li>git diff</li>
+            <li>git difftool</li>
+            <li>git difftool HEAD compares the current working directory with the last commit</li>
+            <li>git difftool --staged HEAD compares the staging area to the last commit</li>
+            <li>git difftool -- [filepath] compares changes for just one file</li>
+            <li>git difftool [commit 1] [commit 2] compares differences betwen commits</li>
+            <li>git difftool main origin/main compares local to remote repos</li>
+            <li>git difftool [branch 1] [branch 2] compares differences between two branches</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Branches</h2>
+        <ul>
+            <li><strong>To List All Branches - </strong>git branch -a</li>
+            <li><strong>To Create A New Branch - </strong>git branch [branch]</li>
+            <li><strong>To Switch Branches - </strong></li>
+            <li><strong>To Rename A Branch - </strong>git branch -m [branch] [new branch]</li>
+            <li><strong>To Delete A Branch (Must Be In A Different Branch) - </strong>git branch -d [branch]</li>
+            <li><strong>To Create and Switch To Branch - </strong>git checkout -b [branch]</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Merging</h2>
+        <ul>
+            <li><strong>Fast Forward Merge - </strong>(Switch To Destination Branch) git merge [source]</li>
+            <li><strong>Disable Fast Forward - </strong>(Switch To Destination Branch) git merge [source] --no-ff</li>
+            <li><strong>Automatic Merges - </strong>Happen when changes are made to master AND new branch</li>
+            <li><strong>Dealing with Merge Conflicts - </strong>git mergetool (then do a normal commit)</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Rebasing</h2>
+        <ul>
+            <li><strong>Basic Rebase - </strong>(From Destination) git rebase [source]</li>
+            <li><strong>Rewinds the Feature added, applies the main branch changes made, and then adds the feature afterwards</strong></li>
+            <li><strong>Abort a Rebase due to Conflict - </strong>git rebase --abort</li>
+            <li><strong>Resolve Conflict of Rebase - </strong>git mergetool; commit the changes; git rebase --continue</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Stashing</h2>
+        <ul>
+            <li><strong>Save and stash changes to work on something else - </strong>git stash</li>
+            <li><strong>Retrieve stashed changes - </strong>git stash apply</li>
+            <li><strong>List the existing stashes - </strong>git stash list</li>
+            <li><strong>Drop unwanted stashes - </strong>git stash drop</li>
+            <li><strong>Stash command only stashes tracked files</strong></li>
+            <li><strong>To stash untracked files - </strong>git stash -u</li>
+            <li><strong>To apply and then drop stash - </strong>git stash pop</li>
+            <li><strong>Working multiple stashes - </strong>git stash save "[message]"; git stash apply stash@{[index]}</li>
+            <li><strong>Stashing into a branch - </strong>git stash -u; git stash branch [branch]</li>
+            <li><strong>Clear stashes - </strong>git stash clear</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Tagging</h2>
+        <ul>
+            <li><strong>Apply a Lightweight Tag to current commit - </strong>git tag [tag name]</li>
+            <li><strong>View tags - </strong>git tag --list</li>
+            <li><strong>Delete tag - </strong>git tag --delete [tag name]</li>
+            <li><strong>Create an Annotated Tag - </strong>git tag -a [tag name]</li>
+            <li><strong>Show tags - </strong>git show [tag name]</li>
+            <li><strong>Inline tag - </strong>git tag [tag name] -m [message]</li>
+            <li><strong>Tag a specific commit - </strong>git tag -a [tag name] [commit]</li>
+            <li><strong>Update a Tag - </strong>git tag -a [tag name] -f [commit]</li>
+            <li><strong>Push Tags to GitHub - </strong>git push origin [tag name]</li>
+            <li><strong>Push all Tags to GitHub - </strong>git push origin main --tags</li>
+            <li><strong>Remove Tag from GitHub - </strong>git push origin :[tag name]</li>
+        </ul>
+    </section>
 </body>
 </html>
